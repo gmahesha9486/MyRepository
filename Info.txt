@@ -2,5 +2,10 @@ spring project
 
 Refer
 http://www.mkyong.com/spring3/spring-3-hello-world-example/
+
+@Configuration
+http://www.mkyong.com/spring3/spring-3-javaconfig-example/
+
+
 https://www.tutorialspoint.com/spring/spring_hello_world_example.htm
 
