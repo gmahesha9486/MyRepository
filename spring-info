@@ -44,3 +44,7 @@ Fruit as below member variables
 private String name;
 private List<String> fruitNameList;
 private Map<String,String>fruitNameMap; 
+
+<bean id="fruit" class="abc.fruit" p:myName="Suresh"/>
+
+myName is member variable.
