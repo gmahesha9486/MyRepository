@@ -15,6 +15,11 @@ p namespace
 <bean id="helloBeanTest" class="com.mkyong.core.HelloWorld">
 	<constructor-arg index="0" value="Suresh123"/>
 </bean>
+// Instead of above , you can use
+<bean id="helloBeanTest" class="com.mkyong.core.HelloWorld">
+	<constructor-arg name="myName" value="Suresh123"/>
+</bean>
+//myName is the member variable.
 	
 <bean id="fruit" class="com.mkyong.core.Fruit">
 	<property name="name" value="orange" />
