@@ -6,3 +6,6 @@ Proxy scoped bean
 http://stackoverflow.com/questions/14371335/spring-scoped-proxy-bean
 
 Spring Tool suite (STS)
+Stateless and statefull bean
+use singleton scope for statelesss bean
+use prototype scopes for staefull bean
