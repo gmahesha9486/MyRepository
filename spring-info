@@ -10,6 +10,8 @@ Stateless and statefull bean
 use singleton scope for statelesss bean
 use prototype scopes for staefull bean
 
+Context namespace is required for the application.properties file reference.
+
 p namespace
 
 <bean id="helloBeanTest" class="com.mkyong.core.HelloWorld">
