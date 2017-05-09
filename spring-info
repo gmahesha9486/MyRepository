@@ -55,3 +55,14 @@ private Map<String,String>fruitNameMap;
 <bean id="fruit" class="abc.fruit" p:myName="Suresh"/>
 
 myName is member variable.
+
+
+Inner bean
+<bean id="mealOuterBean" class="food.Meal">
+	<property name="fruit">
+	<bean id="appleInnerBean" class="food.Apple">
+		<property name="name" value="apple" />
+		<property name="description" value="I am an apple. I am typically red or green with crisp flesh" />
+	</bean>
+	</property>
+</bean> 
