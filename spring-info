@@ -9,3 +9,37 @@ Spring Tool suite (STS)
 Stateless and statefull bean
 use singleton scope for statelesss bean
 use prototype scopes for staefull bean
+
+
+<bean id="helloBeanTest" class="com.mkyong.core.HelloWorld">
+	<constructor-arg index="0" value="Suresh123"/>
+</bean>
+	
+<bean id="fruit" class="com.mkyong.core.Fruit">
+	<property name="name" value="orange" />
+</bean>
+
+
+<bean id="fruitBean" class="com.mkyong.core.Fruit">
+		<property name="fruitNameList">
+			<list>
+				<value>orange</value>
+				<value>apple</value>
+				<value>banana</value>
+			</list>
+		</property>
+		
+		<property name="fruitNameMap">
+			<map>
+				<entry key="apple" value="red"/>
+				<entry key="banana" value="yello"/>
+			</map>
+		</property>
+		
+</bean>
+
+
+Fruit as below member variables
+private String name;
+private List<String> fruitNameList;
+private Map<String,String>fruitNameMap; 
