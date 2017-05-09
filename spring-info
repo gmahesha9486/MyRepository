@@ -10,6 +10,7 @@ Stateless and statefull bean
 use singleton scope for statelesss bean
 use prototype scopes for staefull bean
 
+p namespace
 
 <bean id="helloBeanTest" class="com.mkyong.core.HelloWorld">
 	<constructor-arg index="0" value="Suresh123"/>
