@@ -4,3 +4,5 @@ Annotating a class with the @Configuration indicates that the class can be used 
 
 Proxy scoped bean
 http://stackoverflow.com/questions/14371335/spring-scoped-proxy-bean
+
+Spring Tool suite
