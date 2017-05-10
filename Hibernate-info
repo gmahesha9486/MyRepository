@@ -1,1 +1,24 @@
 
+Hibernate info
+
+Saving the object
+
+1) persist
+saves the object. does not return any value. ie primary key value.
+
+2)save
+saves the object. it returns the primary key column value 
+
+3) saveOrUpdate(obj)
+----------
+Transient data, persistent data
+
+
+Transient data:
+We have created the object. set the data to it. Update the database row. No need to select the object from the db for updating.
+session.update(Obj);
+
+------
+check session.merge(Obj);
+
+
