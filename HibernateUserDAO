@@ -1,0 +1,80 @@
+package skillsoft;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class UserDAO {
+
+			
+		public void addRecordsInBatch() 
+		{
+			
+		 
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Transaction tx = null;
+			
+			try{
+				tx = session.beginTransaction();
+				for(int i=13;i<70;i++) {
+					session.save(new User(i,"john"+i));
+					if(i%10 ==0) {
+						session.flush();
+						session.clear();
+					}
+				}
+			}catch(HibernateException ex) {
+				tx.rollback();
+				ex.printStackTrace();
+				
+			}finally {
+				tx.commit();
+				session.close();
+				
+			}	
+			
+			
+		}
+		public void saveUser(User user) {
+				
+				Session session = HibernateUtil.getSessionFactory().openSession();
+				Transaction tx = null;
+				
+				try{
+					tx = session.beginTransaction();
+					session.saveOrUpdate(user);
+					
+				}catch(HibernateException ex) {
+					tx.rollback();
+					ex.printStackTrace();
+					
+				}finally {
+					tx.commit();
+					session.close();
+					
+				}
+				
+			}
+			
+			public void deleteUser(User user) {
+				
+				Session session = HibernateUtil.getSessionFactory().openSession();
+				Transaction tx = null;
+				
+				try{
+					tx = session.beginTransaction();
+					session.delete(user);
+					
+				}catch(HibernateException ex) {
+					tx.rollback();
+					ex.printStackTrace();
+					
+				}finally {
+					tx.commit();
+					session.close();
+					
+				}
+				
+			}
+	
+}
