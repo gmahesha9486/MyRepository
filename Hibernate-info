@@ -21,4 +21,19 @@ session.update(Obj);
 ------
 check session.merge(Obj);
 
+transaction-type="RESOURCE_LOCAL"
+one more option is JTA
 
+=====================
+Check
+
+batch processing
+<property name="hibernate.jdbc.batch_size">10</property>
+
+Caching in data
+1st level cache
+
+
+================== Query =================
+
+org.hibernate.ejb.HibernatePersistence
