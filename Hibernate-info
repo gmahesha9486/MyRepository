@@ -1,3 +1,12 @@
+ Overall concepts
+batch processing
+caching levels and thier purpose
+hibernate inheritance
+configure sessions.
+
+
+
+
 Hibernate info
 
 Saving the object
@@ -59,6 +68,14 @@ Check
 
 batch processing
 <property name="hibernate.jdbc.batch_size">10</property>
+session.save(obj);
+
+--condition
+session.flush();
+session.clear();
+
+hibernate.jdbc.fetch_size ???
+session.flush ?
 
 Caching in data
 1st level cache
