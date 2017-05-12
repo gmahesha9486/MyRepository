@@ -1,0 +1,65 @@
+
+
+import java.util.List;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Iterator; 
+ 
+import org.hibernate.HibernateException; 
+import org.hibernate.Session; 
+import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import entity.Boat;
+import entity.Motorcycle;
+import entity.Vehicle;
+import util.HibernateUtil;
+
+public class TestApp {
+
+	private static SessionFactory factory; 
+	private static Session session;
+	private static Transaction tx;
+	
+	
+	 
+	public static void main(String[] args) throws Exception {
+		
+		try {
+			
+			session = HibernateUtil.getSessionFactory().openSession();
+			tx = null;
+			
+			tx = session.beginTransaction();
+			
+			Vehicle vehicle = new Vehicle();
+			vehicle.setVehicleID(1);
+			vehicle.setVehicleName("generic vehicle");
+			session.save(vehicle);
+			
+			Motorcycle cycle = new Motorcycle();
+			cycle.setVehicleID(2);
+			cycle.setEngineType("4 stroke");
+			cycle.setVehicleName("motor cycle");
+			session.save(cycle);
+			
+			Boat boat = new Boat();
+			boat.setVehicleID(3);
+			boat.setVehicleName("Boat");
+			boat.setMotorType("boat123");
+			session.save(boat);
+			
+			tx.commit();			
+			
+
+		}catch(Exception e) {
+			System.out.println("==error="+e);
+			tx.rollback();
+		}finally {
+	         session.close(); 
+	      }
+	}
+
+}
