@@ -1,4 +1,3 @@
-
 Hibernate info
 
 Saving the object
@@ -21,8 +20,39 @@ session.update(Obj);
 ------
 check session.merge(Obj);
 
+----------------
+
 transaction-type="RESOURCE_LOCAL"
 one more option is JTA
+
+
+List<Person>persons = session.createQuery("from Person").list();
+
+
+Hibernate object states
+Person obj = new Person("mahesh"); //its transient object
+session.save(obj); //object becomes persistent object. which has representation in the db. 	
+
+
+Inheritance concepts
+
+@Inheritance(strategy=InheritanceType.JOINED)
+public class Vehicle { vehicle_id,vehicle_name}
+
+
+public class Motorcycle extends Vehicle{engineType}
+
+Now if you save objects.
+vehicle table will have motorcycle objects vehicle id, name
+motorcycle table has only one column engineType
+
+
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class Vehicle {}
+
+In this case motorcycle class will have 3 columns. vehicle_id, name,enginetype
+
+
 
 =====================
 Check
@@ -33,7 +63,22 @@ batch processing
 Caching in data
 1st level cache
 
+2nd level cache
+its configurable according to per class
+
+<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>  
+<property name="hibernate.cache.use_second_level_cache">true</property>  
+
+defining custom type
+
+@DescriminatorValue
+
+Inheritance
+check table per class strategy
 
 ================== Query =================
 
 org.hibernate.ejb.HibernatePersistence
+adding model classes in xm file
+
+
