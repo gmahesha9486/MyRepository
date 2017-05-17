@@ -1,0 +1,5 @@
+Parent p = new Parent();
+Child1 c1 = new Child1();
+
+c1=p; //Compile time error
+c1=(Child1)p; //Run time error.  java.lang.ClassCastException:
