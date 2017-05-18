@@ -1,0 +1,378 @@
+Hibernate project
+
+package entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="MProduct")
+public class MProduct {
+
+		@Id
+		@Column(name="product_id")
+		@GeneratedValue
+		private int id;
+		
+		@Column(name="product_name")
+		private String prodName;
+		
+		@ManyToOne
+		@JoinColumn(name="category_id")
+		private MCategory category;
+
+
+		public MProduct(String prodName,MCategory category)
+		{
+			this.prodName = prodName;
+			this.category=category;
+			
+		}
+		public int getId() {
+			return id;
+		}
+
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+
+		public String getProdName() {
+			return prodName;
+		}
+
+
+		public void setProdName(String prodName) {
+			this.prodName = prodName;
+		}
+
+
+		public MCategory getCategory() {
+			return category;
+		}
+
+
+		public void setCategory(MCategory category) {
+			this.category = category;
+		}
+		
+}
+
+-----
+package entity;
+
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="MCategory")
+public class MCategory {
+
+		@Id
+		@Column(name="category_id")
+		@GeneratedValue
+		private int id;
+		
+		@Column(name="category_name")
+		private String categoryName;
+
+		@OneToMany(mappedBy="category",cascade=CascadeType.ALL)		
+		private Set<MProduct> products;
+		
+		
+		public Set<MProduct> getProducts() {
+			return products;
+		}
+
+		public void setProducts(Set<MProduct> products) {
+			this.products = products;
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public String getCategoryName() {
+			return categoryName;
+		}
+
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
+		}
+	
+		public MCategory() {
+			
+		}
+		public MCategory(String categoryName){
+			
+			this.categoryName=categoryName;
+			
+		}
+		
+}
+
+-------------
+package skillsoft;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
+
+
+public class HibernateUtil  {
+
+	private static final SessionFactory factory = buildSessionFactory();	
+			
+			
+	private static 	SessionFactory buildSessionFactory()
+	{
+		
+			try {
+					
+				SessionFactory factory = new AnnotationConfiguration().
+		                   configure().
+		                   //addPackage("com.xyz") //add package if used.
+		                   //addAnnotatedClass(entity.Person.class).
+		                   //addAnnotatedClass(entity.MProduct.class).
+		                   //addAnnotatedClass(entity.MCategory.class).
+		                   buildSessionFactory();
+				return factory;
+				
+			}catch (Throwable ex) { 
+		         System.err.println("Failed to create sessionFactory object." + ex);
+		         throw new ExceptionInInitializerError(ex); 
+		      }
+	}
+	
+	public static SessionFactory getSessionFactory() {
+		
+		return factory;
+	}
+	
+}
+-----------
+package skillsoft;
+
+import java.util.List;
+import java.util.Set;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator; 
+ 
+import org.hibernate.HibernateException; 
+import org.hibernate.Session; 
+import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import entity.MCategory;
+import entity.MProduct;
+
+
+
+public class HibernateTest {
+
+	private static SessionFactory factory; 
+	private static Session session;
+	private static Transaction tx;
+	
+	
+	public static void codejava() throws Exception
+	{
+			
+		try{
+			
+			System.out.println("adding new records============================");
+			
+			session = HibernateUtil.getSessionFactory().openSession();
+	        session.beginTransaction();
+	        
+	        MCategory category = new MCategory("Mobile Phone");
+	        
+	        MProduct product1 = new MProduct("Samsung",category);
+	        MProduct product2 = new MProduct("Micromax",category);
+	        MProduct product3 = new MProduct("Vivo",category);
+			
+	        Set<MProduct>products = new HashSet<MProduct>();
+	        products.add(product1);
+	        products.add(product2);
+	        products.add(product3);
+	        
+	        category.setProducts(products);
+	        
+	        session.save(category);
+	        
+	        session.getTransaction().commit();
+	        
+		}catch(Exception e) {
+			System.out.println("==========error="+e);
+		}
+		
+	}
+	 
+	public static void main(String[] args) throws Exception {
+		
+		try {
+				HibernateUtil.getSessionFactory();
+				codejava();
+				 
+
+		}catch(Exception e) {
+			System.out.println("==error="+e);
+		}
+	}
+
+}
+------------
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+    <hibernate-configuration>
+        <session-factory>
+            <property name="connection.driver_class">
+                org.apache.derby.jdbc.EmbeddedDriver
+            </property>
+            <property name="connection.url">jdbc:derby:D:\\project\\dbDerbyTest\\test\\demo</property>
+            <property name="connection.username"></property>
+            <property name="connection.password"></property>
+            <property name="dialect">org.hibernate.dialect.DerbyDialect</property>
+            <property name="hibernate.generate_statistics">true</property>
+            <property name="show_sql">true</property>
+            <!-- <property name="hibernate.jdbc.batch_size">1</property>  -->
+            
+            <property name="hibernate.hbm2ddl.auto">create</property>
+            
+            <mapping class="entity.MProduct"/>
+			<mapping class="entity.MCategory"/>
+
+        </session-factory>
+    </hibernate-configuration>
+	
+------------
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>hibernateDBQuery</groupId>
+    <artifactId>hibernateDBQuery</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <repositories>
+        <repository>
+            <id>jboss</id>
+            <url>http://repository.jboss.org/maven2</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.5.1-Final</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.5.5-Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.5.5-Final</version>
+        </dependency>
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.9.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.8</version>
+            <type>pom</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>ejb3-persistence</artifactId>
+            <version>3.3.2.Beta1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>10.13.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbyclient</artifactId>
+            <version>10.13.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbynet</artifactId>
+            <version>10.13.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbytools</artifactId>
+            <version>10.13.1.1</version>
+        </dependency>
+        
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>	
+
+
