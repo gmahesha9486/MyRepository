@@ -1,0 +1,57 @@
+Front controller in mvc is Dispatcher servlet(DS). Its inheriting from http servlet java class.
+It handles http request and in returns returns responses.
+
+Spring MVC workflow
+
+HTTP request => Front controller. (request is handled by Front controller. ie DS)
+Front controller passes the request to one more controller.  This process the request n then returns the result(ie model) back to Front controller.
+This controller return bit of info. about view . Accoridng to te view info. DS gets the view template. ie DS passes the model to View template and then DS
+gets the result from view template. Then DS retruns the result to end user. ie browser.
+
+---------
+Components of a spring mvc configuration
+
+	configure web.xml file
+		1) <servlet>
+		2) 	<servlet-mapping>
+
+	configure the servlet config
+	
+	create controller
+	it is java source file. 
+	
+	create views
+--------------
+
+in web,xml file
+
+<servlet>
+		<servlet-name>spring-web</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet>		
+
+Note: DispatcherServlet inherits HTTPServlet
+----------
+<servlet>
+		<servlet-name>spring-web</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- Below part define location of servlet configuration file. This define parameters to pass to servlet when it is initialized.-->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/config/myDemoApp-ServletConfig.xml</param-value>  <!-- Spring bean configuration file -->
+		</init-param>
+		<load-on-startup>1</load-on-startup>  
+	</servlet>
+	
+Note: If you dont specify the contextConfigLocation then it will look for the file named spring-web-servlet.xml file in the same location.
+-------------
+Creating controllers
+
+ 
+@RequestMapping(value="/getQuote")	//Indicate the spring that this method should be mapped to the particular http request.
+public String getRandomQuote(ModelMap model) {
+		
+--------------------
+View Resolver
+
+
