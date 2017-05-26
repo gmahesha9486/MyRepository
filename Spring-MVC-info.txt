@@ -54,4 +54,31 @@ public String getRandomQuote(ModelMap model) {
 --------------------
 View Resolver
 
+---------------------
+Spring for tag library
+------------------
+
+@RequestMapping(value="/createAccount")
+public String createAccount(@ModelAttribute ("aNewAccount")Account account ) {
+//@ModelAttribute :  add an account object to the spring model and giving the  account object a command name of aNewAccount. Purpose of this is to
+map it to form. 
+
+return "createAccount";}
+	  
+-------------------
+<form:form commandName="aNewAccount">
+It binds the model object ???
+
+----------------------
+public String createAccount(@Valid @ModelAttribute ("aNewAccount")Account account ) {
+@Valid  = Based on the validation(constarint) which is set in the Account class view will handle it.
+<form:form commandName="aNewAccount">
+---------
+<form:form commandName="aNewAccount" method="get" action="accountCreated">
+action="accountCreated" //It referes to the jsp page.
+
+@RequestMapping(value="/accountCreated",method=RequestMethod.POST)
+Here RequestMethod.POST : It checks if the 	 http://ABCD/accountCreated  will come from post only. 
+	  
+
 
