@@ -1,6 +1,5 @@
 springMVCDemo\src\main\java\com\demo\controllers
 
-
 package com.demo.controllers;
 
 import java.util.Random;
@@ -39,9 +38,8 @@ public class MyDemoController {
 			
 			return "quote";  //Its view name
 		}
- 
-	  	
-	    /*
+	  
+	     
 		@RequestMapping(value="/createAccount")
 	  	public String createAccount(@ModelAttribute ("aNewAccount")Account account, BindingResult result ) {
 	  		
@@ -53,7 +51,7 @@ public class MyDemoController {
 	  		
 	  		return "createAccount";
 	  	}
-	  	*/
+	  	
 		
 	  	@RequestMapping(value="/accountCreated",method=RequestMethod.POST)	
 		 public String performCreate(Account account) {
@@ -81,38 +79,7 @@ public class MyDemoController {
 	  		return "operationComplete";
 	  	}
 	  	
-	  	/* From here code is added */
-	  	
-	  	@RequestMapping(value="/createAccount")
-	  	public String createAccount(@ModelAttribute ("aNewAccount")Account account ) {
-	  		
-	  		 
-	  		System.out.println("First name="+account.getFirstName() +"  Last name="+account.getLastName());
-	  		System.out.println("Address="+account.getAddress() +"  mail="+account.getEmail());
-	  		
-	  		
-	  		return "createAccount";
-	  	}
-	  	
-	  	@RequestMapping(value="/doCreate")
-	  	public String doCreate(@ModelAttribute ("aNewAccount")Account account ) {
-	  		
-	  		System.out.println("Do create First name="+account.getFirstName() +"  Last name="+account.getLastName());
-	  		System.out.println("Do create Address="+account.getAddress() +"  mail="+account.getEmail());
-	  		
-	  		return "redirect:accConfirm";
-	  	}
-	  	
-	  	@RequestMapping(value="/accConfirm")
-	  	public String accountConfirmation(@ModelAttribute ("aNewAccount")Account account ) {
-	  		
-	  		System.out.println("account confirmed First name="+account.getFirstName() +"  Last name="+account.getLastName());
-	  		System.out.println("account confirmed Address="+account.getAddress() +"  mail="+account.getEmail());
-	  		
-	  		return "accountConfirmed";
-	  	}
-	  
-} 
+}
 
 ----------------------------
 
