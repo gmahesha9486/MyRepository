@@ -1,3 +1,8 @@
+Query
+
+ModelMap vs Model
+
+--------------
 Front controller in mvc is Dispatcher servlet(DS). Its inheriting from http servlet java class.
 It handles http request and in returns returns responses.
 
@@ -76,14 +81,92 @@ public String createAccount(@Valid @ModelAttribute ("aNewAccount")Account accoun
 ---------
 <form:form commandName="aNewAccount" method="get" action="accountCreated">
 action="accountCreated" //It referes to the jsp page.
+Adding the commandName parameter will allow us to bind the form to the specified model attribute.
+
 
 @RequestMapping(value="/accountCreated",method=RequestMethod.POST)
 Here RequestMethod.POST : It checks if the 	 http://ABCD/accountCreated  will come from post only. 
 	  
 ----------------
-Redirect 
+@ModelAttribute
+public void setUserDetails(@RequestParam ("userName") String userName, ModelMap model)
+{}
+Use of @ModelAttribute : Before any of the hander method in this controller get a chance to run, any methods with defined with  
+@ModelAttribute annotation will run prior. 		
 
+--------------------
+		
+Handler methods
 
+@RequestMapping
+Mapped to a specific url or url pattern
 
+Common in arguments
+@RequestParam
+this gives us access to specific servlet parameters of te http request.
+example:@RequestParam ("userName") String userName
 
+@RequestHeader
+this gives us access to specific headers that came along on the request.
 
+@RequestBody
+gives access to body part of http request.
+
+@ModelAttribute
+enhance spring model in some way. ie to add
+
+Common return type
+String
+Model 
+ModelAndView
+View
+
+===================
+Matching requests based on URL parameters.
+
+@RequestMapping(value="/getQuote",params="from")
+If the url has getQuote along with from then only this method handler will work.
+ie http://localhost:8080/springMVCJavaConfig/getQuote?from=Andy
+
+@RequestMapping(value="/getQuote",params="!from")
+If a url does not having from then only method handler works.
+
+@RequestMapping(value="/getQuote",params="from=Admin")
+If from parameter has the value Admin then only method handler works.
+
+---------------
+
+Matching requests based on Headers
+
+@RequestMapping(value="/getQuote", headers="X-API-KEY")
+In this case header should have X-API-KEY (It can have any value assigned to it)
+
+@RequestMapping(value="/getQuote", headers="X-API-KEY=123456")
+Here the header should have th value 123456
+
+-------------------
+
+@RequestMapping(value="/getMyQuote")
+	  public String getMyQuote(@RequestParam("userName") String userName, ModelMap model) {
+		Sysout(userName);
+	  }
+url : http://localhost:8080/springMVCJavaConfig/getMyQuote?userName=mahesh
+Here userName is compulsory
+---------------------
+
+<mvc:resources location="/resources/" mapping="/myResources/*"/>
+
+-------------
+Cookie
+@RequestMapping(value="/addCookie)
+public String addCookie(HttpServletResponse response) {
+	response.addCookie(new Cookie("myNewCookie","a cookie I made"));
+	return "demoPage";
+}
+
+@RequestMapping(value="/getCookie)
+public String getCookie(@CookieValue("myNewCookie") String myCookie)
+{
+	Sop(myCookie)
+}
+	  
