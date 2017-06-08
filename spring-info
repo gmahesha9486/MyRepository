@@ -115,3 +115,20 @@ autowire using constructor
 
 
 ClassPathXml
+
+
+----------------
+@ExceptionHandler({SpringException.class})
+   public String addStudent( @ModelAttribute("HelloWeb")Student student, 
+      ModelMap model) {
+
+-------------
+Spring bean life cycle
+
+    InitializingBean and DisposableBean callback interfaces
+    Other Aware interfaces for specific behavior
+    custom init() and destroy() methods in bean configuration file
+    @PostConstruct and @PreDestroy annotations
+
+----------------------
+
