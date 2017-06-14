@@ -25,3 +25,9 @@ Knowledge Check 2.1
 1) option 1,4 (is easy to use, test suites ....)
 2) BOSH = Life cycle management
 
+------------------------
+
+set http_proxy=http://182.95.92.66:80 
+set https_proxy=https://182.95.92.66:80
+
+3. cf login -a https://api.system.aws-usw02-pr.ice.predix.io <https://api.system.aws-usw02-pr.ice.predix.io/> 
