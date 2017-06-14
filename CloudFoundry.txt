@@ -1,0 +1,27 @@
+Cloud Foundry is a container-based platform. 
+
+BOSH, a tool used to run Cloud Foundry itself.
+
+BOSH takes care of the entire lifecycle required to run Cloud Foundry
+For BOSH, this method is called a manifest file
+
+
+Another benefit of lifecycle management is how BOSH deploys an agent on each part of the system, 
+so that if one piece fails, it can quickly alert operators and even automatically repair the problem. 
+An operator is usually known in the BOSH community as someone who writes and manages various releases that have been built with BOSH.
+
+https://bosh.io. 
+
+
+Cloud Foundry is a container-based platform. 
+A cloud-native application is any application that was designed to run on a PaaS, like Cloud Foundry.
+
+
+
+---------------------
+
+Knowledge Check 2.1
+
+1) option 1,4 (is easy to use, test suites ....)
+2) BOSH = Life cycle management
+
