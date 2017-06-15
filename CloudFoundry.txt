@@ -1,5 +1,5 @@
 https://stackoverflow.com/questions/32432548/modbus4j-modbus-rtu-master
-
+Capture data from Smart Meter EM6400 via RS-485 using Modbus RTU protocol
 ------------------------------
 
 Cloud Foundry is a container-based platform. 
