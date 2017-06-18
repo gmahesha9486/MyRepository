@@ -1,6 +1,7 @@
 https://stackoverflow.com/questions/32432548/modbus4j-modbus-rtu-master
 Capture data from Smart Meter EM6400 via RS-485 using Modbus RTU protocol
 
+https://github.com/kochedykov/jlibmodbus
 https://sourceforge.net/projects/modbus4j/files/modbus4j/1.1/
 ------------------------------
 
