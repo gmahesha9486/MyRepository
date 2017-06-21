@@ -38,3 +38,6 @@ set http_proxy=http://182.95.92.66:80
 set https_proxy=https://182.95.92.66:80
 
 3. cf login -a https://api.system.aws-usw02-pr.ice.predix.io <https://api.system.aws-usw02-pr.ice.predix.io/> 
+
+
+https://gunaje-predix-helloworld-webapp.run.aws-usw02-pr.ice.predix.io/
