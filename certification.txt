@@ -1,0 +1,106 @@
+A = P (1 + r/n) (nt)
+
+================================= 
+Compound interest
+
+A = P (1 + r/n) (nt)
+
+A = the future value of the investment/loan, including interest
+P = the principal investment amount (the initial deposit or loan amount)
+r = the annual interest rate (decimal)
+n = the number of times that interest is compounded per year
+t = the number of years the money is invested or borrowed for 
+
+================================
+ 
+Money is a standardized unit of exchange
+
+physical form of money is currency.
+
+Interest is amount earned
+
+------------
+Types of interest
+SI = Simple interest
+CI = Compound interest
+CAGR = Compounded Annual growth Rate : Its the interest rate at which, a given initial value will grow 
+to a final value, in a given amount of time.
+
+----------------
+CAGR = Compounded Annual growth Rate
+CAGR = (Final value/ Initial value)power 1/n -1
+
+-------------
+NPV = Net present value
+Used to find out if the actual rate is lower or higher than the discountrate used.
+Its an evaluation tool, which gives us an indication, of where the required rate of return lies.
+--------------
+IRR = Internal rate of return
+Used to find out the yield to maturity, of a series of cash flows.
+It is the rate, which makes the present value of all future cash inflows, equal to outflows, ie makes the NPV = 0;
+
+----------------
+
+Inflation
+increase in prices or decrease in the value of money.
+
+Nominal rate of interest:
+It refers to the stated interest rate in the economy.
+
+Inflation rate:
+It refers to the rate at which money is losing the value.
+
+Real rate of interest:
+It refers to the infalation-adjusted rate of interest.
+
+===========================================
+
+Asset - Liability = Owner's Equity.
+
+====================================================
+
+EBIT = Earnings Before Interest & Tax . also called Profit before Interest & Tax.
+
+owe = have an obligation to pay or repay (something, especially money) in return for something received.
+
+---------------------------
+P & L account format
+
+Revenues(Sales/Top line)
+	- Direct Costs
+= Gross Profit
+	- Operating costs
+= Operating Profit/ Income
+	- Depreciation & Amortization
+	- Other expenses
+	+ Other incomes
+	+/- Extra ordinary income/expenses
+= EBIT
+	- Interest
+=Earnings/ Profit before Tax(EBT/PBT)
+	- Tax
+= Profit after tax(PAT/ Bottom line)
+
+-------------------------------
+Cash Flow (CF)
+
+CF from Financing (CFF)
+
+CF from Investing (CFI)
+
+CF from Operations (CFO)
+
+-------------------------------
+
+Contingent Assets & Contingent Liabilities.
+
+
+
+
+
+
+
+
+
+
+ 
