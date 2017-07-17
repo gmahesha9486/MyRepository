@@ -1,3 +1,14 @@
+ 
+NPV = Net Present value of Money
+
+PV = FV/(1+r/100)^t
+
+
+IRR = Internal Rate of Return
+
+
+===========================
+
 A = P (1 + r/n) (nt)
 
 ================================= 
@@ -92,15 +103,28 @@ CF from Operations (CFO)
 
 -------------------------------
 
+Asset = Liability + Owner's equity
+
+------------------
 Contingent Assets & Contingent Liabilities.
+-------------------
+
+Components of Balanace sheet
+Assets - Current /Long term
+Liabilities - Current/Long term
+Owner's equity - Share capital/ Reserves & surplus
 
 
+=============================================
+
+Types of Financial statements
+
+Profit & Loss account (also known as Income statement)
+Cash flow statement
+Balance sheet . It has 3  : asset, Liability
 
 
+=================== Chapter 3: Understanding Risk =========
 
-
-
-
-
-
- 
+Standard deviation (SD)
+Its measure of volatility. Low SD indicates that the data po
