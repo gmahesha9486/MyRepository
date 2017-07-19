@@ -128,3 +128,15 @@ Balance sheet . It has 3  : asset, Liability
 
 Standard deviation (SD)
 Its measure of volatility. Low SD indicates that the data po
+
+=============== Chapter 4: Financial Framework ==========
+Components of Financail system.
+
+Markets : Stock market, money market, Bond market
+
+Market players: individual, banks, 
+
+Instruments: stocks, bonds
+
+Regulators : The federal reserve(USA)
+
