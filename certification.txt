@@ -140,3 +140,80 @@ Instruments: stocks, bonds
 
 Regulators : The federal reserve(USA)
 
+======================
+
+Different types of banking
+
+Commercial banks 
+
+Retail banks
+
+Investment banks :
+
+-----------------------
+
+Central gov. or central institution is referred as : federal in US
+
+-----------------------
+Category of Banks in US
+
+Commercial banks :Services all types of customers.
+
+community banks : serves individual, small businesses.
+
+Savings banks and savings and loan assocaiations or thrifts
+
+Credit unions : not a commercial banks. The National Credit Union Administration(NCUA) is the federal agency that
+
+charters and supervises federal credit unions.
+
+
+Note: In UK, instead of Credit union banks, they have Building Society.
+
+------------
+Regulators:
+
+The Federal Reserve is the central bank of the US, while RBI is the central bank of India.
+In UK : Bank of England
+
+--------------------------
+
+CAR (Capital Adequacy Ratio) - Basel Accord/ Norms
+min. amount of owner's capital banks must maintain.
+
+Risks covered by Basel Norms
+Credit risk : risk of loss a bank faces while lending. later bank will not have money to pay to depositors.
+
+Operational risk : during regular operations.
+
+Market risk : risk while trading in various financial markets.
+
+----------------------------
+
+Investment banking
+
+Functions of IB
+Mergers & Acqisitions.
+Loan Syndication   : Group of bank called Syndicate will lend money to companies.
+Issue management   : also known as merchant banking services. issuing shares to public.
+Underwriting	   : Underwriter will commit to buy any unsubscribed shares.
+Private Equity(PE)& Venture capital(VC) : VC provide equity capital funding to start-up. PE provide funding to companies which are more mature 
+										   in their corporate lifecycle.	
+										   
+Reserve Requirements.
+
+----------------------------
+
+Financial Markets/  Treasury
+
+------------------------------
+
+Summary of financial statements: 
+
+Specialised line divisions of a bank : 
+1) Investment banking
+2) Global markets/Treasury : Provides order and trade  execution functions to corporates and individuals, in financial markets.
+
+================================
+
+
