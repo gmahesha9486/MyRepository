@@ -192,6 +192,8 @@ Market risk : risk while trading in various financial markets.
 
 Investment banking
 
+Investment banking
+
 Functions of IB
 Mergers & Acqisitions.
 Loan Syndication   : Group of bank called Syndicate will lend money to companies.
@@ -216,4 +218,251 @@ Specialised line divisions of a bank :
 
 ================================
 
+		Raising money
+		
+Ways of raising money.
+
+Internal Reserves : existing owner's money. known as existing equity. 
+
+Fresh equity : is raised either by acqiring new owner's or through existing owners.  
+
+Borrow Money : 	known as raising debt. its also called leveraging or gearing
+---------------
+
+Equity instruments or stock are of two types
+
+1. common stock
+2. preferred stock 
+
+------------------
+
+Common stock :
+Represents ownership of the company.
+carry voting rights for the owners.
+exists as long as the company exists.
+
+Face value/ Par value : internally set value given to the stock and has no relationship to the market price.
+It won't change once stock is public.
+
+Mainly dividends expresses as a percentage of face value.
+
+-----------------
+
+Preferred stock:
+
+also represents ownership, but do not have voting rights.
+stockholders carry a fixed rate of dividend,  but have a claim only on profits.
+stockholders have preference over common stock holders on dividends &capital when the company liquidates.
+
+-------------------
+Type of preferred stock:
+
+1. Perpetual : exists as long as the company exists. and are not repayable or redeemable, similar to common stock.
+
+2. Redeemble : have a fixed maturity. face value is returned to the stockholder after maturity.
+
+3. Convertible : are convertible to common stock at a pre-defined ratio.  at the option of the investor, after a certain period.
+
+============================
+
+ADR (American Depository Receipt)
+is a stock that trades on American stock exchange.
+each ADR represents a specific number of stock in a non american corporation.
+
+GDR (Global Depository receipt)
+It is used to offer Indian stock in any other country other than the US.
+============================
+
+Chapter 5: Borrow Money:
+
+2 ways to borrow money are:
+
+Leveraging methods:
+	Loan from institutions : ie get loan from banks.
+	Issuance of debt securities. : 
+
+====================
+
+Issuance of debt securities. :  It has certain features.
+Rate of interest.
+Date of payment
+Amount to be repaid
+
+Ownership: Holders of debt securities are not owners of the company. they are its creditors. They may demand 
+collateral, to protect their investment. In case, they do its called secured debt.  ese its unsecured debt.
+
+Face value is imp.
+----------
+Types of debt seurities.
+
+Issuing authority
+Corporates, Banks, Government
+
+The maturity
+Maturity period
+Bonds & Debentures : Long term
+Money market securities : Short term.
+
+-----------
+Government securities
+
+Bonds issued by the central government in the US are called  Treasury securities, or Treasuries.
+They are called Gilts in the UK. JGB(Japanese Govt. Bonds) in japan.
+GOI (Govt. Of India)
+
+Coupon : is the original interest rate committed by the issuer.
+
+2 types of coupon rate
+fixed rate,
+floating rate
+
+Most popular international benchmark rate is LIBOR (London Inter-Bank Offer Rate)
+There is an association called the ICE Benchmark Administration(IBA) which determines the rate.
+----------------------
+
+International credit rating agencies : 
+S&P, Moody's, Fitch, Dun & Bradstreet
+
+Indin credit rating agencies: CRISIL, ICRA
+
+==============================
+
+Money market securities 
+
+It is other main category of debt securities. short term. less than a year.
+
+categories are:
+Treasury Bills(T-bills) : issued by govt. unsecured in nature.
+Certificate of Deposits(CDs) : instrument issued by bank/instituitions. CDs are tradable.
+Commercial papers(CPs) : Unsecured debt instrument issued by a corporation.
+Repurchase Agreements(Repos) : lending transaction where the borrower uses debt securities as collateral for the borrowing.
+								It is secured borrowing.
+								
+------------
+
+Weighted Average Cost of Capital(WACC)								
+
+Companies uses mor than one method of source for financing.
+=====================================
+
+Summary
+
+Debt Securities
+
+Long term : Bond, Debentures. G-Secs/ Treasuries/ Gilts
+Short term : T-bills, Commercial papers, Certificate of deposits.
+
+Capital Structure:  Of a firm is the way in which capital is split between equity and debt.
+for this we are using Weighted Average Cost of Capital(WACC)	
+WACC = Weighted cost of Debt + Weighted cost of Equity
+
+================================================								
+
+Chapter 6: Investing Money
+					
+Investment cycle :
+Financial Planning (Risk profiling)
+Investment decision (Asset allocation)
+Portfolio monitoring (Rebalancing)
+
+					
+Financial Planning
+
+Understanding of portfolio management principles : Risk -Return framework
+Reading of people and their comfort zones : Risk profiling
+
+---------------
+Funds
+funds are a mode of investing money indirectly into stocks and bonds.
+
+Mutual fund is a type of fund.
+It is called as Unit Trusts, or Unit Investment Trusts in the UK.
+
+Some other types of funds are:
+Hedge funds
+Pension funds
+
+---------------------------
+Mutual Funds
+
+Entry load : The funds may charge fees in the form of what is known as 'Load'
+Front-end or Entry load : fee charged when you are entering or purchasing units from the fund. In US its known as 'Sales Charge'
+Exit load : In US its known as 'Contingent Deferred Sales charge'
+
+--------------------
+Category of MF
+
+Open ended fund: Investors can purchase the shares(or units) of the fund from the fund company, and sell it back(called Repurchase price) 
+				 to the company at any time. No fixed maturity.
+
+Close ended fund : funds can be purchased from the fund company only during the initial offer period and even then there is a 
+					limit on the total amount(corpus) that will be invested in the fund.sale price and repurchase price will not be applicable.
+					
+----------------------
+Categorization of MF
+
+Equity funds  : Invest primarily in equities.
+Income funds  : Invest in debt instruments
+Balanced funds : Invest in both equity, debt instruments.
+Money market Funds : Invest in money market instruments such as CPs, CDs, T-bills.
+Sectoral Funds : IT sector is one example.
+
+
+============================
+query 
+
+Preference shares
+demand deposits
+WACC
+
+=========================================
+
+Chapter 7: Financial markets- Generic framework
+
+Trade life cycle
+Issuance  : IPO
+Pre-Trade : get market info. check whether to buy/sell
+Trade     : executes the transaction in the market.
+Post-Trade: exchange teh instrument for cash, on a specified date called settlement date.
+Asset servicing : buyer will receive all the benefits in future. ie dividend etc.
+
+---------------
+
+Stage 1 - Issuance
+
+Primary Market
+	IPO
+	Private placements
+	FPO   : Follow on Public Offering 
+	Right issue
+	
+FPO : when a public limited co. wishes to raise additonal money (company already raised IPO)
+
+Rights issue : when a public limited co. wishes to raise money, by issuing shares to the existing shareholders only.
+
+Private placements : Firms wishes to raise money from public. if they dont want IPO, they can raise money from few large institutional investors.
+
+-------------
+
+Issuance Process
+	Hiring the managers : Involves investment bankers.
+	Due Digilence and Drafting : Involves understanding the business and filling the legal documents.
+	Marketing:
+	Public Announcement and allotment
+
+Entire issuance process for a company, is managed by an investment bank. Providing such services, is also called 
+issue management,  or merchant banking.
+	
+Document to be filled at this time is called 'The Red Herring Prospectus'
+	
+------
+Auction process is also called 'book-building' in capital market terms.
+
+Dutch auction : all bidders get their shares at the cut-off price.
+
+
+Regulators
+
+SEC (Securities & Exchange Commission)	in US
+FSA (Financial Services Authority) in UK
 
