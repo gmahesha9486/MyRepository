@@ -22,4 +22,62 @@ Retail Investors
 ---
 Commercial banks : They are the main subscribers to the bond issues for their own books(trading)  or on behalf of clients.
  
+------------------------------
+
+Role of various Market participants
+
+DMO : new issues of Govt. are made by the DMO. in primary market.
+
+Banks & Institutions : dealers bid for the price 
+
+MF, insurance co, pension funds buy these bonds from the dealers, in secondary market
+
+----------------------
+Bond pricing
+
+bond proces changes due to various factors affecting demand and supply.
+
+Price of bond is the sum of the present value of all its future cash flows.
+
+Step 1: Determine the cash flows
+Step 2: Find the PVs of each cash flow
+
+To find out the Present value(PV) from Future value(FV)
+PV = FV/(1+r/100)^t
+r= interest rate (also called as discount rate) Its also knows as yield
+t= time period in years
+
+----------------------
+
+Bond price :
+Bond price = < c/(1+r/m)^(m*t)
+
+c = coupon or cash flows
+r = yield in the market
+m = number of times compounding happens in a year
+t = time period in years
+
+---------------------------
+
+Money market (MM)
+
+Money market is similar to bond market and even considered part of it.
+MM instruments are very short-term instruments. unlike bonds and debentures.
+also called cash instruments.
+Repos are backed by govt. hence it is safe.
+T-bills, Commercial papers,  Certificates of Deposits are all money market instruments.
+
+--------------------
+
+Foreign Exchange Markets
+
+Currency trading is conducted in the OTC (Over the Counter) market, that is directly between the dealers.
+No exchange involved.
+
+Bid rate : the rate at which the bank is willing to buy the base currency.
+
+Offer rate : the rate at which bank is willing to sell the base currency.
+
+
+ 
  
