@@ -1,0 +1,163 @@
+angular.module
+: angular is a global variable
+
+
+angular.module('myApp',[]);
+creating an module.
+
+
+<html ng-app="myApp">
+Angular is managing the entire document.
+
+
+--------------
+
+	sample example 1
+
+-- app.js
+
+"use strict";
+
+angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainController',['$scope',function($scope) {
+
+	$scope.message ='Hello';
+
+	$scope.sayHello = function(name) {
+		return $scope.message + ' ' +name;		
+	};
+
+	console.log('hello world');
+}]);
+
+sample.html
+
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</head>
+
+<body ng-controller="MainController">
+
+	<p>{{ sayHello('Mahesh') }}</p>
+	<p>{{ sayHello('Sagar') }}</p>
+
+ 
+<p>Input something in the input box:</p>
+<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+<h1>Hello {{name}}</h1>
+
+ 
+
+</body>
+</html>
+------------------------------------
+
+	sample example 2
+
+app.js 
+
+"use strict";
+
+angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainController',['$scope','$interval',function($scope, $interval) {
+
+ 	var items = ['banana', 'apple','orange'];
+
+	$scope.itemIndex= null;
+	$scope.currentItem= '';
+
+	
+	$scope.getItem = function() {
+		$scope.currentItem=  items[$scope.itemIndex];
+	};
+
+
+	// Below part is for time interval.
+	
+	$interval( function() {
+		$scope.itemIndex = Math.round( Math.random() * (items.length-1) );
+		$scope.getItem();
+
+	},2000);
+
+	console.log('hello world');
+}]);
+
+sample.html
+
+<body ng-controller="MainController">
+
+	 
+<p>Enter the index value:</p>
+<p>
+	Index : <input type="text" ng-model="itemIndex">
+		<input type="button" value="Get Item" ng-click="getItem()">
+</p>
+<h1>Current Item: {{currentItem}}</h1>
+
+ 
+
+</body>
+
+---------------------------------------
+
+	sample example 3
+
+"use strict";
+
+angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainController',['$scope','$interval',function($scope, $interval) {
+
+	$scope.randomValue=99;
+
+	$scope.names = ['mahesh', 'sagar', 'santosh'];
+ 	 	
+	$interval( function() {
+		$scope.randomValue = Math.round( Math.random() * 10000 );
+	},2000);
+
+	$scope.price = 9.6;
+	$scope.quantity=100;
+	$scope.pwidth=100;
+
+
+	console.log('hello world');
+}]);
+
+
+sample.html
+
+<body ng-controller="MainController">
+
+ 	<p>Standard bracket expression</p>
+	<p>{{ randomValue }}</p>
+
+ 	<p>One time bracket expression</p>
+	<p>{{ ::randomValue }}</p>
+
+	<p>Array bracket expression</p>
+	<p>{{ names[2] }}</p>
+
+	<p>Operation bracket expression</p>
+	<p>{{ quantity*price }}</p>
+
+	<p>Enter width: <input type="text" ng-model="pwidth"></p>
+	<p style="background:#ff0000;width:{{pwidth}}px">
+		This is dynamic paragraph
+	</p>
+
+</body>
+
+================================================
+
+
+
