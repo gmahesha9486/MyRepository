@@ -1,0 +1,15 @@
+Collections
+Sorting algo.
+various use of collections : Linked list, arraylist etc.
+
+Maven
+Jenkins
+
+Multithread
+wait, join
+
+
+Performance handling
+I/O, Java 8
+
+SQL
