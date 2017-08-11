@@ -13,3 +13,13 @@ Performance handling
 I/O, Java 8
 
 SQL
+
+
+Monitor
+Lock
+Synchronization
+Race condition and deadlock
+
+CountDownLatch
+Semaphore
+ConcurrentHashMap
