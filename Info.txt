@@ -12,6 +12,9 @@ Capital place number sky
 The link to download the workbook is given below 
 https://www.nseindia.com/content/ncfm/SMRepository/SM_FIN_BIGIN_ENNEW.pdf
 ------------------
+Workbook shall be issued only in electronic format (in downloadable PDF mode) to the email ID submitted by the candidates at the time of registration. Issuance of physical workbook is discontinued w.e.f July 1, 2015.For any queries / assistance you may please write to us at ncfm@nse.co.in OR call us on Toll Free Number: 1800 22 0051.
+
+==================================
   Predix details
   
 https://training.predix.io/lms/
