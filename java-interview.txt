@@ -1,3 +1,28 @@
+Custom exceptions
+Exception handling in method overloading, overriding
+create unchecked exception for custom exception
+How set doesnot have duplicate values
+Serialization
+Pass data from one jvm to other
+
+Semaphore
+CountDownLatch
+Cyclic barrier
+Thread Local
+Thread group
+Automic variable
+Forn and join
+Executor framework
+PDF from concurrency cookbook
+concurrency in practice
+
+callable, runnable
+Future.Get
+Read write lock
+Fragment
+Data structure algorithm
+
+====================
 Collections
 Sorting algo.
 various use of collections : Linked list, arraylist etc.
