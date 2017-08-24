@@ -69,6 +69,9 @@ https://sdk-docs.lithium.com/develop/getStarted
 https://sdk-docs.lithium.com/learn/architecture
 
 =======================
+Printer details
+\\182.94.116.16
+--------------
 
 Check below company
 State street
