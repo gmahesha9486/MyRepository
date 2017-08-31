@@ -57,9 +57,18 @@ Lazy initialization in hashcode
 intrinsic lock vs extrinsic lock
 
 
-
-
 We can develop Rest client application using
 Sprint rest template
 Jersey rest client
 Rest easy client
+
+REST concept
+
+RequestMethod.GET
+-----------------
+@RestController
+@RequestMapping
+@PathVariable
+@RequestBody
+------------
+Rest based authentication, authorization, validation 
