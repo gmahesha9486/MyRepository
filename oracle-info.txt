@@ -1,0 +1,64 @@
+Procedure
+functions
+Trigger
+
+Collection/Cursor
+
+================
+Pl/SQL
+
+
+
+Declare
+
+	variables
+
+Begin
+
+
+Exception
+
+	handle exception
+
+End;
+
+-------------------
+Data types
+Number
+double
+float
+varchar
+char
+varchar2
+date
+datetime
+timestamp
+lob
+clob
+raw
+
+
+NLS date format
+------------------------------------
+Oracle defined exception
+User defined exception
+
+declare user defined exception in declare part. define in exception part.
+
+Whenever sqlerror
+-------------------------------
+Declare
+	a number=10;
+	b number = 12;
+	c number;
+
+begin
+	a=20;
+	b=40;
+	c=a/b;
+exception
+	
+============================
+sample pl/sql
+
+create or replace 
