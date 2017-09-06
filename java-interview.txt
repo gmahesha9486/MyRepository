@@ -72,3 +72,8 @@ RequestMethod.GET
 @RequestBody
 ------------
 Rest based authentication, authorization, validation 
+
+----------------------
+
+Hibernate session is not closed. what will happen?
+simultaneous insertion to hibernate. which is inserted first.
