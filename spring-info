@@ -132,3 +132,16 @@ Spring bean life cycle
 
 ----------------------
 
+REST
+
+@RestController
+@RestController is a convenience annotation that does nothing more than adding the @Controller and @ResponseBody annotations.
+added in spring 4
+It eliminates the need of annotating each method with @ResponseBody
+
+@RequestMapping
+It is used to map web requests onto specific handler classes and/or handler methods. 
+
+
+@RequestBody
+
