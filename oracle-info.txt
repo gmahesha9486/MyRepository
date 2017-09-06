@@ -1,9 +1,21 @@
+merge command
+: efficient way to update and insert inhostoric data.
+
+
 Procedure
 functions
 Trigger
 
 Collection/Cursor
+loops in pl/sql
+procedures v/s functions
+even in function, you can write ddl statements. in that case, you cant use that function in select statement
 
+Packages : similar to import in java
+It contains functions, procedures in it.
+
+Package specification
+package body
 ================
 Pl/SQL
 
@@ -59,6 +71,9 @@ begin
 exception
 	
 ============================
-sample pl/sql
 
-create or replace 
+declare
+	a number :=10;
+begin
+	for a in 1 to 10
+	
