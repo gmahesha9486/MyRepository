@@ -159,5 +159,20 @@ sample.html
 
 ================================================
 
+Angular 2
+
+List of Terminology
+Single page app
+native mobile code with NativeScript
+=======================
+
+Installing angular packages
+
+Angular app module
+Angular app component
+Component based styling
+type script compiler
+Lite server
+Interpolation
 
 
