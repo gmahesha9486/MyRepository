@@ -1,3 +1,17 @@
+======== DB derby =========
+Open derby db in cmd
+ij
+
+connect to the existing db
+CONNECT 'jdbc:derby:D:\\Mahesh\Projects\Derby\DerbyData\demo';
+
+create a database using cmd
+CONNECT 'jdbc:derby:D:\\Mahesh\Projects\Derby\DerbyData\demo;create=true';
+
+exit the connection
+exit;
+=============================
+
 https://headstrong.skillport.com/skillportfe/login.action
 mahesha.gunaje@genpact.com
 ----------------------
