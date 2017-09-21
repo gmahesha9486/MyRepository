@@ -77,3 +77,80 @@ declare
 begin
 	for a in 1 to 10
 	
+
+-------------------------------
+
+Sub query
+
+Aggregate functions
+group by is done in cache area.
+
+
+Analytical functions
+over
+AVG
+RANK  : 
+Dense rank
+Lead
+Lag
+
+over (partition by department)
+
+--------------------
+Triggers
+
+2 types
+row level trigger
+statement level trigger
+
+before, after 
+
+---------
+database trigger
+to track who has logged in
+
+------------
+Pragma autonomous transaction
+
+------------------
+Full table scan
+
+Index
+
+B tree index  (most popular index)
+bit map index
+Function based index
+Reverse index
+
+
+on multiple column
+ie col1,col2,col3
+
+then in select .....from ...where col2 =fff and col1 = aaa // it wont use index.
+
+----------------------------
+Partition
+
+Range
+hash
+list : 
+combination of above 3
+daily partition : will use list
+
+Re pointing the partition
+
+=========================
+Tuning
+
+Trace file, awr reports
+
+avoid in, like 
+instead of like, use substring
+
+dont use like 'A%'
+use =substr()
+
+instead of sub query, always use exists (If the sub query table has less rows)
+instead of insert, use merge  (merge = it does insert, update)
+use insert, append, merge
+Hint
