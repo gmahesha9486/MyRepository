@@ -186,3 +186,6 @@ string st1=”hi”;
 hash map object hm.put(st)
 hm.put(st1,);
 
+Method references and constructor references
+
+Reference : http://www.baeldung.com/java-8-functional-interfaces
