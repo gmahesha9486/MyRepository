@@ -80,3 +80,95 @@ simultaneous insertion to hibernate. which is inserted first.
 -------------------------
 dependency injection
 whats the difference internally
+
+============
+
+Memory management
+How collection object is stored? And how it manages the data that it hold, even data is object.
+
+Default method forEach method in Iterator
+Check the package :  java.util.function
+
+Functional programming
+Method arguments in java 8 can be lambda expression.
+
+Assign method body to a variable.
+Pass behavior as a parameter to a method.
+Ie we can pass  method(or behavior) as argument to another method.
+
+Check Stream object, stream package.
+Stream pipeline
+
+Concurrency v/s parallelism.
+
+Multiple core work : parallelism logic: fork-join
+Single core work : concurrency
+
+Java8 takes advantage of fork join interface which is introduced In java7
+
+https://stackoverflow.com/questions/19672427/string-s-new-stringxyz-how-many-objects-has-been-made-after-this-line-of
+
+Concurrency v/s parallel programming
+
+============== 
+
+Thread synchronization
+
+1)	Mutual exclusion
+By synchronized method/ block/ static synchronization
+
+2)	Cooperation (Inter-thread communication)
+
+
+Lock in java
+
+
+
+createThread(int startindex, end index, arraylist)
+
+run() {….}
+
+
+Lock fairness
+
+
+Deadlock : has greedy thread
+Live Lock  : has 
+
+Starvation
+Semaphore
+
+JConsole :  its UI to monitor the java application.
+Check the option Detect deadlock
+
+
+DZONE : Synch Vs Reentrant Lock
+
+Reentrant lock: unlock function v/s notify all
+Lock interface
+
+Refer : http://tutorials.jenkov.com/java-util-concurrent/index.html
+Java concurrency in practice  book
+
+Effective java by Joshua Bloch
+
+
+Class
+
+Stream.of()
+
+Terminal method/operations in stream.
+All intermediate operations in stream are lazy in nature. …these op. returns stream
+Terminal operation in stream is must.  There op. will return void, Boolean  (it should not be a stream)
+
+//once stream tereminal operation is done, stream will be deleted.
+
+Check Supplier class
+
+Supplier<Stream<String>> obj ==
+	() -> Stream.of(“d”,”a”,”b”)
+	.filter(s -> s.startsWith(“a”));
+
+Obj.get().anyMatch(s ->true);
+Obj.get().noneMatch(s ->true);
+
