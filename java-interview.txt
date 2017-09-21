@@ -172,3 +172,17 @@ Supplier<Stream<String>> obj ==
 Obj.get().anyMatch(s ->true);
 Obj.get().noneMatch(s ->true);
 
+--------------
+
+internal structure of hashmap
+
+hm has table of entry objects
+collection of entry object > it has key, value pair
+
+
+string st = new string(“hi”);
+
+string st1=”hi”;
+hash map object hm.put(st)
+hm.put(st1,);
+
