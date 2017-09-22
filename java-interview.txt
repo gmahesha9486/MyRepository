@@ -172,6 +172,59 @@ Supplier<Stream<String>> obj ==
 Obj.get().anyMatch(s ->true);
 Obj.get().noneMatch(s ->true);
 
+List<String>obj
+
+Obj.stream().sorted().forEach(Sysout);
+
+System.out.println() vs  System.out::println(method reference)
+
+Method reference : System.out::println
+Applicable on Static methos, instance methods
+
+Check these functions
+
+Collect, filter,stream
+
+List<Person>list = personList.stream().filter(p ->p.name.startsWith(“P)).collect(Collectors.toList());
+
+Map<Int,List<Person> mpsobj = persons.stream().collect(Collectors.groupingBy(p-> p.age);
+
+Mpsobj.forEach(age,p) -> System.out.format(“age=”+age);
+
+
+IntSummaryStatistics ageSummary = persons.stream().collect(Collectors.summarizingInt(p->p.age));
+//Convert list to map using stream.
+				        persons.stream().collect(Collectors.toMap(p -> p.age, p ->p.name));	
+
+  				persons.stream().collect(Collectors.toMap(p -> p.age, p ->p.name,
+				(name1,name2) ->name2 ));	 // It will give us hashmap
+
+To get linkedhashmap or other map than hashmap, use below code
+  				persons.stream().collect(Collectors.toMap(p -> p.age, p ->p.name,
+				(name1,name2) ->name2,
+LinkedHashMap :: new));	 // It will give us hashmap
+
+
+Map methods
+Collect,map,filter, Collector
+
+
+List<String> names = persons.stream().map(p->p.name).collect(Collectors.toList());
+Note: fork,join is introduced in java7
+
+Parallel stream.
+
+ForkJoinPool pool = FJP.commonPool();
+Pool.getParallellism();
+Check using sequential stream, parallel stream, external iterators.
+
+
+Null handling
+Null is a special type in java which holds only one value: null
+
+Java.util.Optional;
+
+
 --------------
 
 internal structure of hashmap
