@@ -1,3 +1,7 @@
+Active MQ info
+http://www.coderpanda.com/jms-example-using-apache-activemq/
+http://activemq.apache.org/enterprise-integration-patterns.html
+http://activemq.apache.org/getting-started.html#GettingStarted-Usingtheadministrativeinterface
 http://www.javainuse.com/spring/bootcamel
 
 
