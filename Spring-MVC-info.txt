@@ -3,29 +3,36 @@ Query
 ModelMap vs Model
 
 --------------
-Front controller in mvc is Dispatcher servlet(DS). Its inheriting from http servlet java class.
+Spring MVC
+
+It is based on the Front controller pattern. : one controller will get all of the http request of the web application 
+and pass this request to other appropriate controller.
+
+Front controller in mvc is a Dispatcher servlet(DS). Its inheriting from http servlet java class.
 It handles http request and in returns returns responses.
 
 Spring MVC workflow
 
 HTTP request => Front controller. (request is handled by Front controller. ie DS)
 Front controller passes the request to one more controller.  This process the request n then returns the result(ie model) back to Front controller.
-This controller return bit of info. about view . Accoridng to te view info. DS gets the view template. ie DS passes the model to View template and then DS
-gets the result from view template. Then DS retruns the result to end user. ie browser.
+This controller return bit of info. about view . Accoridng to te view info. DS gets the view template. ie DS passes the model to View template and then DS gets the result from view template. Then DS retruns the result to end user. ie browser.
 
 ---------
 Components of a spring mvc configuration
 
-	configure web.xml file
+	1) configure web.xml file : place to tell servlet container that what servlet going to be deploying, servlet mapping, url pattern.
 		1) <servlet>
 		2) 	<servlet-mapping>
 
-	configure the servlet config
+	2) configure the servlet config : It provides configuration for the servlet. its an xml file. 
+		Its the file to define the beans that going to be used by the spring web mvc framework.
 	
-	create controller
-	it is java source file. 
+	3) create controller(s)
+	It is java source file. it  typically contain custom application code. code here is actual methods that 			
+        perform the work of our application.
 	
-	create views
+	4) create views/ view template. it may be jsp page.
+
 --------------
 
 in web,xml file
@@ -35,7 +42,7 @@ in web,xml file
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 </servlet>		
 
-Note: DispatcherServlet inherits HTTPServlet
+Note: DispatcherServlet class inherits(using sub classes) HTTPServlet 
 ----------
 <servlet>
 		<servlet-name>spring-web</servlet-name>

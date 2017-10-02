@@ -1,26 +1,38 @@
-Front controller in mvc is Dispatcher servlet(DS). Its inheriting from http servlet java class.
+Query
+
+ModelMap vs Model
+
+--------------
+Spring MVC
+
+It is based on the Front controller pattern. : one controller will get all of the http request of the web application 
+and pass this request to other appropriate controller.
+
+Front controller in mvc is a Dispatcher servlet(DS). Its inheriting from http servlet java class.
 It handles http request and in returns returns responses.
 
 Spring MVC workflow
 
 HTTP request => Front controller. (request is handled by Front controller. ie DS)
 Front controller passes the request to one more controller.  This process the request n then returns the result(ie model) back to Front controller.
-This controller return bit of info. about view . Accoridng to te view info. DS gets the view template. ie DS passes the model to View template and then DS
-gets the result from view template. Then DS retruns the result to end user. ie browser.
+This controller return bit of info. about view . Accoridng to te view info. DS gets the view template. ie DS passes the model to View template and then DS gets the result from view template. Then DS retruns the result to end user. ie browser.
 
 ---------
 Components of a spring mvc configuration
 
-	configure web.xml file
+	1) configure web.xml file : place to tell servlet container that what servlet going to be deploying, servlet mapping, url pattern.
 		1) <servlet>
 		2) 	<servlet-mapping>
 
-	configure the servlet config
+	2) configure the servlet config : It provides configuration for the servlet. its an xml file. 
+		Its the file to define the beans that going to be used by the spring web mvc framework.
 	
-	create controller
-	it is java source file. 
+	3) create controller(s)
+	It is java source file. it  typically contain custom application code. code here is actual methods that 			
+        perform the work of our application.
 	
-	create views
+	4) create views/ view template. it may be jsp page.
+
 --------------
 
 in web,xml file
@@ -30,7 +42,7 @@ in web,xml file
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 </servlet>		
 
-Note: DispatcherServlet inherits HTTPServlet
+Note: DispatcherServlet class inherits HTTPServlet
 ----------
 <servlet>
 		<servlet-name>spring-web</servlet-name>
@@ -76,13 +88,92 @@ public String createAccount(@Valid @ModelAttribute ("aNewAccount")Account accoun
 ---------
 <form:form commandName="aNewAccount" method="get" action="accountCreated">
 action="accountCreated" //It referes to the jsp page.
+Adding the commandName parameter will allow us to bind the form to the specified model attribute.
+
 
 @RequestMapping(value="/accountCreated",method=RequestMethod.POST)
 Here RequestMethod.POST : It checks if the 	 http://ABCD/accountCreated  will come from post only. 
 	  
 ----------------
-Redirect 
+@ModelAttribute
+public void setUserDetails(@RequestParam ("userName") String userName, ModelMap model)
+{}
+Use of @ModelAttribute : Before any of the hander method in this controller get a chance to run, any methods with defined with  
+@ModelAttribute annotation will run prior. 		
 
+--------------------
+		
+Handler methods
 
+@RequestMapping
+Mapped to a specific url or url pattern
 
+Common in arguments
+@RequestParam
+this gives us access to specific servlet parameters of te http request.
+example:@RequestParam ("userName") String userName
 
+@RequestHeader
+this gives us access to specific headers that came along on the request.
+
+@RequestBody
+gives access to body part of http request.
+
+@ModelAttribute
+enhance spring model in some way. ie to add
+
+Common return type
+String
+Model 
+ModelAndView
+View
+
+===================
+Matching requests based on URL parameters.
+
+@RequestMapping(value="/getQuote",params="from")
+If the url has getQuote along with from then only this method handler will work.
+ie http://localhost:8080/springMVCJavaConfig/getQuote?from=Andy
+
+@RequestMapping(value="/getQuote",params="!from")
+If a url does not having from then only method handler works.
+
+@RequestMapping(value="/getQuote",params="from=Admin")
+If from parameter has the value Admin then only method handler works.
+
+---------------
+
+Matching requests based on Headers
+
+@RequestMapping(value="/getQuote", headers="X-API-KEY")
+In this case header should have X-API-KEY (It can have any value assigned to it)
+
+@RequestMapping(value="/getQuote", headers="X-API-KEY=123456")
+Here the header should have th value 123456
+
+-------------------
+
+@RequestMapping(value="/getMyQuote")
+	  public String getMyQuote(@RequestParam("userName") String userName, ModelMap model) {
+		Sysout(userName);
+	  }
+url : http://localhost:8080/springMVCJavaConfig/getMyQuote?userName=mahesh
+Here userName is compulsory
+---------------------
+
+<mvc:resources location="/resources/" mapping="/myResources/*"/>
+
+-------------
+Cookie
+@RequestMapping(value="/addCookie)
+public String addCookie(HttpServletResponse response) {
+	response.addCookie(new Cookie("myNewCookie","a cookie I made"));
+	return "demoPage";
+}
+
+@RequestMapping(value="/getCookie)
+public String getCookie(@CookieValue("myNewCookie") String myCookie)
+{
+	Sop(myCookie)
+}
+	  
