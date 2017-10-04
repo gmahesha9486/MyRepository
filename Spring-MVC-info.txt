@@ -59,15 +59,42 @@ Note: If you dont specify the contextConfigLocation then it will look for the fi
 -------------
 Creating controllers
 
+@Controller
+public class MyDemoController {
  
-@RequestMapping(value="/getQuote")	//Indicate the spring that this method should be mapped to the particular http request.
-public String getRandomQuote(ModelMap model) {
-		
+	@RequestMapping(value="/getQuote")	//Indicate the spring that this method should be mapped to the particular http request.
+	public String getRandomQuote(ModelMap model) {
+		return "quote";  //Its view name quote.jsp	
+	}		
 --------------------
 View Resolver
 
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+This class is the concrete implementation class of the ViewResolver interface.
 ---------------------
-Spring for tag library
+Folder structures of a application
+src/main/java
+Keep the java class files here
+src/main/webapp
+Inside webapp
+	> resources
+	> WEB-INF
+		config
+		jsp
+		web.xml
+
+==============================
+
+Spring form tag library
+
+The Spring form tags are themselves defined in the spring-form.tld file or a (Tag Library Descriptor) file. 
+And this file is going to be part of your Spring MVC jar.
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+Note: Here prefix is form. above indicates that i am using spring form tags.
+
+<form:input type="text" name="demo"/>
+Here, form is prefix. input is spring tag as oppose to a regular HTML input tag.
 ------------------
 
 @RequestMapping(value="/createAccount")
