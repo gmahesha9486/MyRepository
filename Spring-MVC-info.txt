@@ -1,6 +1,26 @@
+Topics to learn
+
+Request handler
+MVC exception handling
+
+=========================
 Query
 
+Handling session
+@SessionAttributes
+
+Cookies usage
+
+BindingResult result : always have error
 ModelMap vs Model
+
+Model v/s ModelAndView
+
+
+@ModelAttribute
+public void setUserDetails(@RequestParam ("userName") String userName, ModelMap model)
+Here in the URL we need to provide the attribute ?userName=abc
+How to make this value optional.
 
 --------------
 Spring MVC
@@ -91,7 +111,7 @@ The Spring form tags are themselves defined in the spring-form.tld file or a (Ta
 And this file is going to be part of your Spring MVC jar.
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-Note: Here prefix is form. above indicates that i am using spring form tags.
+Note: Here prefix is form. above indicates that we are using spring form tags.
 
 <form:input type="text" name="demo"/>
 Here, form is prefix. input is spring tag as oppose to a regular HTML input tag.
@@ -99,22 +119,39 @@ Here, form is prefix. input is spring tag as oppose to a regular HTML input tag.
 
 @RequestMapping(value="/createAccount")
 public String createAccount(@ModelAttribute ("aNewAccount")Account account ) {
-//@ModelAttribute :  add an account object to the spring model and giving the  account object a command name of aNewAccount. Purpose of this is to
-map it to form. 
+//@ModelAttribute :  add an account object to the spring model and giving the  account object a 
+command name of aNewAccount. Purpose of this is to map it to form. 
 
 return "createAccount";}
 	  
 -------------------
+<form:input path="firstName" type="text" name="firstname"/>
+Here path refers to the property of Account class object.
+
+---------------------------
 <form:form commandName="aNewAccount">
-It binds the model object ???
+Its like informing spring form what object which will be binding to.
 
 ----------------------
-public String createAccount(@Valid @ModelAttribute ("aNewAccount")Account account ) {
+Validating a spring MVC form
+
+public String createAccount(@Valid @ModelAttribute ("aNewAccount")Account account, BindingResult result ) {
 @Valid  = Based on the validation(constarint) which is set in the Account class view will handle it.
+
+Any error from the validation, we will access in controller by setting up a binding result object.
+Use spring error tag 
+
+Note: For validation , we need below maven 
+<dependency>
+<groupId>javax.validation</groupId>
+<artifactId>validation-api</artifactId>
+<version>1.1.0.Final</version>
+</dependency>
+------------------------
 <form:form commandName="aNewAccount">
 ---------
 <form:form commandName="aNewAccount" method="get" action="accountCreated">
-action="accountCreated" //It referes to the jsp page.
+action="accountCreated" // 
 Adding the commandName parameter will allow us to bind the form to the specified model attribute.
 
 
@@ -122,14 +159,34 @@ Adding the commandName parameter will allow us to bind the form to the specified
 Here RequestMethod.POST : It checks if the 	 http://ABCD/accountCreated  will come from post only. 
 	  
 ----------------
+public String handleForm(@RequestParam("myFile") MultipartFile file)
+To get the attached file. 
+---------------------
+Serving static files
+
+<mvc:resources mapping="/myResources/**" location="/resources/" />  
+---------------------
+Redirects
+
+return "redirect:accConfirm";
+
+---------------------
+
 @ModelAttribute
 public void setUserDetails(@RequestParam ("userName") String userName, ModelMap model)
 {}
 Use of @ModelAttribute : Before any of the hander method in this controller get a chance to run, any methods with defined with  
 @ModelAttribute annotation will run prior. 		
 
+URL will be : http://localhost:8888/springMVCDemo/getQuote?userName=mahesh
+
 --------------------
-		
+@RequestMapping(value="/getQuote", params="from")	
+//In above case, url must have from text. ie ...../getQuote?from=abcd
+
+
+
+	
 Handler methods
 
 @RequestMapping
@@ -137,7 +194,7 @@ Mapped to a specific url or url pattern
 
 Common in arguments
 @RequestParam
-this gives us access to specific servlet parameters of te http request.
+this gives us access to specific servlet parameters of the http request.
 example:@RequestParam ("userName") String userName
 
 @RequestHeader
@@ -147,7 +204,7 @@ this gives us access to specific headers that came along on the request.
 gives access to body part of http request.
 
 @ModelAttribute
-enhance spring model in some way. ie to add
+enhance spring model in some way. ie to add/edit on spring model.
 
 Common return type
 String
