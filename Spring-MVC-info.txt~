@@ -181,8 +181,8 @@ Use of @ModelAttribute : Before any of the hander method in this controller get 
 URL will be : http://localhost:8888/springMVCDemo/getQuote?userName=mahesh
 
 --------------------
-	
-
+@RequestMapping(value="/getQuote", params="from")	
+//In above case, url must have from text. ie ...../getQuote?from=abcd
 
 
 
@@ -261,3 +261,7 @@ public String getCookie(@CookieValue("myNewCookie") String myCookie)
 	Sop(myCookie)
 }
 	  
+==================================
+Exception handling
+
+
