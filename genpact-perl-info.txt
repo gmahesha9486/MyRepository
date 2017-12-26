@@ -1,0 +1,39 @@
+my @arr =(xyz,abc,pqa);
+@arr =sort(@arr);
+
+foreach(@arr) {
+    print "$_ \n";
+}
+
+#
+# Hello World Program in Perl
+#
+print "Hello World!\n";
+
+my @arr = (10,20,99);
+
+foreach(@arr) {
+    #print "$_ \n";
+}    
+#print @arr;
+my @arr = (10,20,30);
+#push(@arr,40);
+pop(@arr);
+unshift(@arr,99);
+foreach(@arr) {
+    print "$_ \n";
+}
+
+Chop, chomp
+
+Sort hashmap usig values
+
+my %year = (
+            "Jan" =>1,
+            "Feb" =>2,
+            "Mar" =>3,
+            "APr" =>4
+            );
+foreach my $keys (sort{$year{$b} <=> $year{$a}} keys %year) {
+    print "$keys => 
+}    
