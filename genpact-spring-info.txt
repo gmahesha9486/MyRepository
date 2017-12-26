@@ -1,0 +1,23 @@
+https://tech.lds.org/wiki/Java_Stack_Training
+
+https://tech.lds.org/wiki/Intermediate_JSP#Lab_2_Taglibs
+http://code.lds.org/maven-sites/stack/module.html?module=security-web
+
+Spring MVC reference documentationhttp://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html
+http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html#mvc-servlet
+
+
+Request/Response objects
+Session object
+Spring’s WebRequest object
+java.util.Locale
+java.io.Reader (access to request content)
+java.io.Writer (access to response content)
+java.security.Principal
+ModelMap
+org.springframework.validation.Errors
+org.springframework.validation.BindingResult
+
+
+
+ 
