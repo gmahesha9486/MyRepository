@@ -1,0 +1,710 @@
+ReactJS info-2024
+
+https://medium.com/@scozdev/write-a-react-component-like-a-pro-4852109ffee5
+ 
+Keywords/Notes
+ 
+prop destructuring
+Updating state based on old state
+ 
+------------------------
+https://github.com/academind/react-complete-guide-course-resources/blob/main/attachments/03%20React%...
+ 
+ 
+------------
+ 
+AEM with React
+https://experienceleaguecommunities.adobe.com/t5/adobe-experience-manager/aem-spa/m-p/644898#M161544
+ 
+https://experienceleague.adobe.com/en/docs/experience-manager-learn/getting-started-with-aem-headles...
+ 
+---------------------
+ 
+Youtube channel
+developedbyed
+chaiaurcode
+ 
+ 
+Insta ID list
+react_devdas
+malamasdevs
+ 
+Anshu Raj
+https://github.com/anshuopinion/anshuopinion
+ 
+Coding Channel - Www.YouTube.com/dosomecoding
+ 
+Tech Channel - www.YouTube.com/anshuopinion
+ 
+https://www.youtube.com/watch?v=eILUmCJhl64
+ 
+ 
+*************************************************
+npm install
+ 
+npm run dev
+ 
+--------------
+ 
+Format Document command / shortcut in VS code
+ 
+-------------------------------------------
+ReactJs Tutor
+ 
+Library for building web and native UI
+a JS library
+ 
+ 
+React = Declarative UI Programming
+ 
+-------------------
+Prettier extention in VS code ide
+ 
+Create a project from scratch
+ 
+npm create vite@latest react-project
+select framework:  React,
+variant: JavaScript
+ 
+Now, run the command: npm install 
+to install necessary packages
+this is 1 time to run the cmd
+ 
+To run the app,
+npm run dev
+ 
+ 
+http://localhost:5173/
+-----------------------------
+ 
+JSX - HTML in JavaSCript
+ 
+------------------------
+ 
+React Essentials
+ 
+JCX
+Components
+Props
+State
+ 
+ 
+React apps are built by combining components
+ 
+--------------
+starting point
+ 
+index.html file
+<div id="root"></div>
+<script type="module" src="/src/index.jsx"></script>
+ 
+Now, check index.jsx file: this acts as the main entry point of our React app.
+Since, it is the first file to be loaded by the html file. Here, where the react app boots up.
+To be precise, import ReactDOM from "react-dom/client"; this is the special React DOM library,
+which ultimately renders this App component.
+App component is rendered by passing jsx code to this render method.
+ReactDOM.createRoot(entryPoint).render(<App />);
+ 
+ 
+you will see these plus other code.
+ 
+const entryPoint = document.getElementById("root");
+ReactDOM.createRoot(entryPoint).render(<App />);
+ 
+check App.jsx
+ 
+function App() {
+  return (
+    <div>
+        <header>
+<img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+<h1>React Essentials 123</h1>
+<p>Some details</p>
+</header>
+      <main>
+        <h2>Time to get started Mahesh!</h2>
+      </main>
+    </div>
+  );
+}
+ 
+export default App;
+ 
+ 
+jsx is a js file that uses non-standard javascript syntax.
+JSX: Javascript Syntax eXtension
+allows developers to describe and create HTML elements
+writing html markup code inside of javascript files
+jsx is used to describe & create html elements in javascript in a declarative way.
+ 
+ 
+Browser will not support jsx code
+React project come with a build process that transforms jsx code(behind the scenes)
+to code that does work in browsers
+ 
+App.jsx is a component.
+-------------------
+ 
+Components
+ 
+this should follow 2 rules
+ 
+Function name must start with upper case character
+function must return a "renderable" content
+ 
+--------------
+ 
+use other component like thi:
+ 
+function App() {
+  return (
+    <div>
+      <Header /> 
+      <main>
+        <h2>Time to get started Mahesh!</h2>
+      </main>
+    </div>
+  );
+}
+ 
+--------------------
+ 
+sample component for test
+ 
+export function MainGoal() {
+ 
+  return(
+       
+        <p>
+         My main goal: Learn react from the ground up
+        </p>
+     
+  );
+}
+ 
+-------------------------
+ 
+why react component should start with uppercase?
+ 
+reason: all built-in elements like: div, image, header start with lowercase characters.
+custom components, must start with an uppercase character to tell react that its not a built-in component.
+ 
+ 
+built-in elements/components like: div, image, header  are rendered as dom nodes by React.
+on the other hand, custom components like our Header are just functions and therefore executed as functions by React.
+takes the returned jsx code, and starts analyzing that code until it ends up with only built-in elements at a certain point of time,
+which are then rendered to the screen.
+ 
+----------------------
+ 
+Using & Outputting Dynamic values(Core Concept)
+ 
+Dynamic content
+ 
+add these in App.jsx
+ 
+{1+1}
+this will print 2. inside {}, you can write any js logic, which gives some output.
+ 
+write this, in app.jsx file
+const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
+function getRandomInt(max){
+  return Math.floor(Math.random() * (max+1));
+}
+ 
+To display, use
+<p>{reactDescriptions[getRandomInt(2)]}</p>
+ 
+ 
+other way of displaying
+function Header() {
+ 
+  const description = reactDescriptions[getRandomInt(2)];
+   return(
+      <p> {description}
+  </p>
+  
+ 
+---------
+Loading the images
+ 
+Instead of this,
+<img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+ 
+use these in app.jsx
+import myReactImg from './assets/react-core-concepts.png';
+ 
+<img src={myReactImg} alt="Stylized atom" />  
+ 
+-------------------
+ 
+export const userData = {
+  firstName: 'Maximilian', // feel free to replace the name value
+  lastName: 'Schwarzmüller', // feel free to replace the name value
+  title: 'Instructor', // feel free to replace the title value
+};
+ 
+To fetch single value, use
+{userData['firstName']}
+------------- 
+ 
+Outputting Dynamic Content
+ 
+import React from 'react';
+ 
+export const userData = {
+  firstName: 'Maximilian', // feel free to replace the name value
+  lastName: 'Schwarzmüller', // feel free to replace the name value
+  title: 'Instructor', // feel free to replace the title value
+};
+ 
+// Edit the User component code to output the userData data
+export function User() {
+  return (
+    <div id="user" data-testid="user">
+      <h2>
+        {userData['firstName']} {userData['lastName']}
+      </h2>
+      <p>{userData['title']}</p>
+    </div>
+  );
+}
+ 
+// DON'T edit the App component code
+function App() {
+  return (
+    <div id="app">
+      <h1>Time to Practice</h1>
+      <p>Welcome on board of this course! You got this 💪</p>
+      <User />
+    </div>
+  );
+}
+ 
+export default App;
+ 
+-------------------------------
+Making components re usable with Props
+React allows you to pass data to components via concept called 'Props'
+ 
+ 
+for a component, u can pass all types of values.
+<userInfo
+name="max"
+age={34}
+details={ {username: 'Max'} }
+hobbies={ ['Cooking','Reading'] }
+/>
+ 
+ 
+sample:
+ 
+<CoreConcept
+                      title="Components"
+                      description="The core UI building blocks"
+                      image={componentsImg}
+/>
+ 
+// name props can be anything
+ 
+function CoreConcept(props) {
+ 
+  return(
+      <li>
+        <img src={props.image} alt="" />
+        <h3>{props.title}</h3>
+        <p>{props.description}</p>
+      </li>
+ 
+  );
+}
+ 
+one more sample:
+ 
+import { CORE_CONCEPTS } from './data.js';
+ 
+<CoreConcept
+                      title={CORE_CONCEPTS[0].title}
+                      description={CORE_CONCEPTS[0].description}
+                      image={CORE_CONCEPTS[0].image}
+/>
+ 
+another sample:
+ 
+<CoreConcept {...CORE_CONCEPTS[1]}/>
+ 
+ 
+one more ...
+ 
+function CoreConcept({image, title, description}) {
+ 
+return(
+      <li>
+        <img src={image} alt="" />
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </li>
+ 
+  );
+}
+ 
+--------------------------------------
+ 
+Component creation
+ 
+src/components
+ 
+export default function Header() { ... }
+ 
+component specific styles
+ 
+-------------
+ 
+The content between component opening and closing tags is used as a value for the special "childern" prop
+ 
+<TabButton>
+<p>Hello World</p>
+<h2> How are you</h2>
+</TabButton>
+ 
+then, in TabButton.jsx file
+ 
+export default function TabButton(props) {
+    return(
+            <li><button>{props.children}</button></li>
+    );
+}
+ 
+knows as component composition
+ 
+-----
+Button click event
+ 
+export default function TabButton(props) {
+ 
+    function handleClick() { // this name can be anything.
+        console.log('Hello world');
+    }
+    return(
+            <li>
+                <button onClick={handleClick}>{props.children}</button>
+            </li>
+    );
+}
+-----------
+Passing functions as Values to Props
+ 
+function App() {
+ 
+  function handleTestSelect() {
+    console.log('Hello world - Selected');
+  }
+  
+  <TabButton onMySelect={handleTestSelect} >Components</TabButton>
+            <TabButton onMySelect={handleTestSelect}>JSX</TabButton>
+            <TabButton onMySelect={handleTestSelect}>Props</TabButton>
+            <TabButton onMySelect={handleTestSelect}>State</TabButton>
+  
+} 
+ 
+export default function TabButton({children, onMySelect}) {
+ 
+    return(
+            <li>
+                <button onClick ={onMySelect}>{children}</button>
+            </li>
+    );
+} 
+ 
+------------
+Passing values to function
+ 
+function handleTestSelect(selectedButton) {
+    console.log(selectedButton);
+}
+  
+<TabButton onMySelect={() => handleTestSelect('components')} >Components</TabButton>
+<TabButton onMySelect={() => handleTestSelect('jsx')} >JSX</TabButton>
+ 
+ 
+--------------------
+Note: By default, React components execute only once.
+ 
+For this, need to use the concept state.
+import {useState} from 'react';
+ 
+ 
+const[selectedTopic, setSelectedTopic] = useState('Please click a button');
+selectedTopic is a variable, gets the value: Please click a button
+setSelectedTopic is a function.
+ 
+sample code:
+ 
+function App() {
+ 
+  const[selectedTopic, setSelectedTopic] = useState('Please click a button');
+ 
+  function handleTestSelect(selectedButton) {
+    setSelectedTopic(selectedButton);
+    console.log(selectedTopic);
+  }
+  
+}
+ {selectedTopic}  
+****************************************
+css styling and dynamic styling
+ 
+ 
+ 
+-------------------------------
+ 
+outputting list data dynamically
+ 
+ {CORE_CONCEPTS.map( (conceptItem) => (
+                      <CoreConcept key ={conceptItem.title} {...conceptItem} />
+                ))}
+ 
+ 
+-------------------------------------
+Section 4
+ 
+Use of Fragments
+instead of <div>, you can use
+ 
+import { Fragment } from "react";
+ 
+ 
+ 
+<Fragment>
+ 
+</Fragment>
+ 
+Note: import {useState, Fragment} from 'react';
+ 
+Even, you can use empty tag too
+<>
+ 
+</>
+ 
+===================================
+ 
+splitting of components
+ 
+--------------
+ 
+<Section title="example" id="test" className="">
+</Section>
+ 
+ 
+export default function Section({title, children, ...myProps}) {
+    return(
+            <section {...myProps}>
+                <h2>{title}</h2>
+                {children}
+            </section>
+    );
+}
+ 
+all extra props that might be set on our custom section component here, will be forwarded to this built-in Section element: myProps
+ 
+-------------------------
+ 
+Setting component Types Dynamically
+ 
+Examples.jsx
+<Tabs 
+                buttonsContainer="menu"
+                buttons={
+                    <>
+                    <TabButton 
+                    isSelected={selectedTopic == 'components'}
+                    onClick={() => handleTestSelect('components')} >Components</TabButton>
+                    <TabButton 
+                        isSelected={selectedTopic == 'jsx'}
+                        onClick={() => handleTestSelect('jsx')} >JSX</TabButton>
+                    <TabButton 
+                        isSelected={selectedTopic == 'props'}
+                        onClick={() => handleTestSelect('props')} >Props</TabButton>
+                    <TabButton 
+                        isSelected={selectedTopic == 'state'}
+                        onClick={() => handleTestSelect('state')} >State</TabButton>
+                    </>    
+                }>
+                {tabContent}
+            </Tabs>
+ 
+in Tabs.jsx file
+export default function Tabs({children, buttons, buttonsContainer}){
+    const ButtonContainer = buttonsContainer;
+ 
+    return <>
+        <ButtonContainer>
+            {buttons}
+        </ButtonContainer>
+        {children}
+    </>
+}
+ 
+-----------------------------
+ 
+Setting default Prop values
+ 
+export default function Tabs({children, buttons, ButtonsContainer='menu'}){
+    const ButtonContainer = buttonsContainer;
+ 
+//ButtonsContainer='menu'  setting the default value.
+ 
+-------------------------------
+ 
+Project Tic Tac Toe
+ 
+Updating state based on old state
+pass a function to your state updating function
+ 
+function handleEditClick(){
+          setIsEditing((editing) => !editing);
+}
+ 
+ 
+----------------------
+ 
+User input and 2-way binding
+ 
+ function handleChange(event){
+      setPlayerName(event.target.value);
+    }
+ 
+<input type="text" required value={playerName} onChange={handleChange} />
+ 
+If we need to pass some value while entering details on input text, then use below logic
+ 
+function handleChange(inputIdentifier, newValue){
+        setUserInput(prevUserInput => {
+            return {
+                  ...prevUserInput,
+                  [inputIdentifier]:newValue
+            };
+        });
+        
+    }
+ 
+<input type="number" 
+required
+value={userInput.initialInvestment}
+onChange={(event) => handleChange('initialInvestment',event.target.value)}/>
+ 
+------------------------------
+Lifting State Up
+ 
+Note:
+<button onClick={onSelectSquare}>{playerSymbol}</button>
+ 
+<button onClick={() => onSelectSquare(rowIndex,colIndex)}>{playerSymbol}</button>
+ 
+--------------------
+ 
+use this type of array initialization
+let gameBoard = [...initialGameBoard.map(array => [...array])];
+ 
+-----------------------
+ 
+ const [userInput, setUserInput] =   useState({
+        initialInvestment: 10000,
+        annualInvestment: 1200,
+        expectedReturn: 6,
+        duration: 10
+    });
+ 
+function handleChange(inputIdentifier, newValue){
+        setUserInput(prevUserInput => {
+            return {
+                  ...prevUserInput,
+                  [inputIdentifier]:newValue
+            };
+        });
+ 
+    }
+ 
+----------------------------------
+ 
+Outputting content conditionally
+ 
+-------------------------------------
+ 
+Installing Styled components
+ 
+npm install styled-components
+ 
+in package.json add these lines
+ 
+"resolutions": {
+    "styled-components": "^5"
+}
+ 
+--------------------------
+ 
+extension
+ 
+then type: rafce
+ 
+--------------
+react icons
+ 
+npm install react-icons
+ 
+import {
+------------
+ 
+const { isOutline, icon, text} = props;
+ 
+use these variables as is then
+ 
+-----------------
+ 
+VS code extensions
+console ninja
+ 
+-------------------------
+ 
+TailWind
+ 
+https://tailwindcss.com/docs/guides/vite
+ 
+npm create vite@latest project-5 -- --template react
+cd project-5
+ 
+npm i
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+ 
+ 
+-----------------
+Prettier plugin
+npm install -D prettier prettier-plugin-tailwindcss
+ 
+// .prettierrc
+{
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
+-----------
+Firebase
+ 
+npm install firebase
+ 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+ 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA-_2fMXFCX96FRB0RawgwQWL4uEuZqo8Y",
+  authDomain: "vite-contact-96d40.firebaseapp.com",
+  projectId: "vite-contact-96d40",
+  storageBucket: "vite-contact-96d40.appspot.com",
+  messagingSenderId: "515857357376",
+  appId: "1:515857357376:web:4e9077069c52f5819d5da5"
+};
+ 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
